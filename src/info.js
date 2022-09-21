@@ -1,6 +1,3 @@
-import noaccess from './no-access.svg';
-import access from './access.svg';
-import attention from './attention.svg'
 import React from 'react';
 
 export const Info = ({value, style}) => {
@@ -12,7 +9,6 @@ export const Info = ({value, style}) => {
         <div id="msg" style={messageStyle}>{value.extraInfo}</div>
         <div id="msg" style={messageStyle}>{getClosedElapsInMins(value.closedSince)}</div>
     </div>
-    
   )
 };
 
@@ -28,9 +24,6 @@ const messageStyle = {
     fontSize: "1rem",
     textAlign:"center"
 };
-
-
-
 
 const getClosedElapsInMins = (closedSinceTime) => {
     if (!closedSinceTime) return;
