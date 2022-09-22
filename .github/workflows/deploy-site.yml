@@ -16,8 +16,6 @@ jobs:
       with:
         workflow: build-site.yml
         workflow_conclusion: success
-    
-    - uses: actions/checkout@v2
     - uses: azure/login@v1
       with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
@@ -25,7 +23,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            az storage blob upload-batch --account-name bridgestatus  --auth-mode key -d '$web' -s production-files
+            az storage blob upload-batch --account-name bridgestatus  --auth-mode key -d '$web' -s ./production-files
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
