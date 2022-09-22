@@ -65,7 +65,7 @@ const App = () => {
           <div style={{ maxWidth: '100vh', maxHeight: '100vh'  }}>
             <CircularProgressbarWithChildren 
               value={status.openedMinutesRemaining} 
-              maxValue={70} 
+              maxValue={60} 
               styles={
                 buildStyles({
                   pathColor: style.color
