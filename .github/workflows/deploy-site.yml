@@ -2,7 +2,7 @@ name: Deploy static site
 
 on:
   workflow_run:
-    workflows: ["Node.js CI"]
+    workflows: ["Build site"]
     branches: [master]
     types: [completed]
 
@@ -14,7 +14,7 @@ jobs:
     - name: Download artifact
       uses: dawidd6/action-download-artifact@v2
       with:
-        workflow: node.js.yml
+        workflow: build-site.yml
         workflow_conclusion: success
     
     - uses: actions/checkout@v2
