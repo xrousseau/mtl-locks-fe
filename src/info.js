@@ -7,7 +7,7 @@ export const Info = ({value, style}) => {
         <div id="remaining" style={getRemainingTextStyle(style.txtColor)}>{value.openedMinutesRemaining} m</div>
         <div id="icon" style={{textAlign:"center"}}><img src={style.icon}  width="50%" alt="logo" /></div>
         <div id="msg" style={messageStyle}>{value.extraInfo}</div>
-        <div id="msg" style={messageStyle}>{getClosedElapsInMins(value.closedSince)}</div>
+        <div id="msg" style={messageStyle}>{getClosedElapsInMins(value.closedSince)} min</div>
     </div>
   )
 };
