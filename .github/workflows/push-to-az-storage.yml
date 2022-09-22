@@ -1,13 +1,22 @@
-name: Blob storage website CI
+name: Deploy static site
 
 on:
-    push:
-        branches: [ "master" ]
+  workflow_run:
+    workflows: ["Node.js CI"]
+    branches: [master]
+    types: [completed]
 
 jobs:
-  build:
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
+    - name: Download artifact
+      uses: dawidd6/action-download-artifact@v2
+      with:
+        workflow: node.js.yml
+        workflow_conclusion: success
+    
     - uses: actions/checkout@v2
     - uses: azure/login@v1
       with:
