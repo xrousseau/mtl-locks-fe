@@ -11,7 +11,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -27,4 +26,9 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
-#    - run: npm test
+    - run: npm test
+    - name: Upload production-ready build files
+      uses: actions/upload-artifact@v2
+      with:
+        name: production-files
+        path: ./build
