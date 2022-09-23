@@ -44,10 +44,6 @@ const App = () => {
     return <div>Loading...</div>;
   } else {
 
-      // inject
-      status.expectedNextClosure = '10:44';
-      status.isOpened = true;
-      status.openedMinutesRemaining = 34;
 
       const style = utility.getStyle(status);
       return (
