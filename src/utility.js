@@ -8,18 +8,18 @@ export const getStyle = (status) => {
       icon : access,
       color : '#3e98c7'
     }
-  
+    // closed (red)
+    if (!status.isOpened) {
+      style.icon = noaccess;
+      style.color = "#cc0000"
+    }
     // expected to close (yellow)
-    if (status.expectedNextClosure != null | status.extraInfo === 'Raising Soon') {
+    else if (status.expectedNextClosure != null | status.extraInfo === 'Raising Soon') {
       style.icon = attention;
       style.color = "#f86304"
     }
   
-    // closed (red)
-    else if (!status.isOpened) {
-      style.icon = noaccess;
-      style.color = "#cc0000"
-    }
+
   
     return style;
 } 
