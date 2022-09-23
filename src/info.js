@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export const Info = ({value, style}) => {
 
   return (

@@ -1,11 +1,8 @@
-import noaccess from './icon-stop.svg';
-import access from './icon-go.svg';
-import attention from './icon-attention.svg'
-
 import { buildStyles, CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { useEffect, useState } from 'react';
-import {Info} from './info'
+import { Info } from './Info';
+import * as utility from './utility';
 
 
 const App = () => {
@@ -47,20 +44,12 @@ const App = () => {
     return <div>Loading...</div>;
   } else {
 
-      const style = {
-        icon : access,
-        color : '#3e98c7'
-      }
-    
-      if (status.isOpened && status.extraInfo === 'Raising Soon') {
-        style.icon = attention;
-        style.color = "#f86304"
-      }
-      else if (!status.isOpened) {
-        style.icon = noaccess;
-        style.color = "#cc0000"
-      }
+      // inject
+      status.expectedNextClosure = '10:44';
+      status.isOpened = true;
+      status.openedMinutesRemaining = 34;
 
+      const style = utility.getStyle(status);
       return (
         <div>
           <div style={{ maxWidth: '100vh', maxHeight: '100vh'  }}>
@@ -70,7 +59,7 @@ const App = () => {
               strokeWidth={10}
               styles={
                 buildStyles({
-                  backgroundColor: style.color
+                  pathColor: style.color
                 })
               }
             >
@@ -81,5 +70,7 @@ const App = () => {
       );
   }
 }
+
+
 
 export default App;
