@@ -2,7 +2,7 @@ import { buildStyles, CircularProgressbarWithChildren } from 'react-circular-pro
 import 'react-circular-progressbar/dist/styles.css';
 import { useEffect, useState } from 'react';
 import { Info } from './Info';
-import {getStyle} from './utility';
+import {getMessage, getStyle} from './utility';
 
 
 const App = () => {
@@ -46,6 +46,7 @@ const App = () => {
 
 
       const style = getStyle(status);
+      status.extraInfo = getMessage(status);
       return (
         <div style={{width:'100%', position:'relative'}}>
           <div style={{ maxWidth: '100vh', maxHeight: '100vh', margin: "0 auto", }}>
