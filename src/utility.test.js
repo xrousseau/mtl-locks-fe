@@ -9,7 +9,7 @@ test('style for opened status with NO expected closed date', () => {
 
 test('style for opened status with an expected closed date', () => {
     const styleReturned = utility.getStyle(data.openedWithAnExpectedNextClosure());
-    const styleExpected = { icon: 'icon-attention.svg', color: '#f86304' };
+    const styleExpected = { icon: 'icon-attention.svg', color: '#fcc005' };
     expect(styleReturned).toEqual(styleExpected);
 });
 
