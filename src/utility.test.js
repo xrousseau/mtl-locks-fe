@@ -1,5 +1,5 @@
-import * as utility from './utility'; // library tested
-import * as data from './testdata.js'; // test data
+import * as utility from './utility';
+import * as data from '../__test__/testdata.js';
 
 test('style for opened status with NO expected closed date', () => {
     const styleReturned = utility.getStyle(data.openedWithNOExpectedNextClosure());

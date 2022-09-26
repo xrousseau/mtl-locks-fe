@@ -2,7 +2,7 @@ import { buildStyles, CircularProgressbarWithChildren } from 'react-circular-pro
 import 'react-circular-progressbar/dist/styles.css';
 import { useEffect, useState } from 'react';
 import { Info } from './Info';
-import * as utility from './utility';
+import {getStyle} from './utility';
 
 
 const App = () => {
@@ -45,7 +45,7 @@ const App = () => {
   } else {
 
 
-      const style = utility.getStyle(status);
+      const style = getStyle(status);
       return (
         <div>
           <div style={{ maxWidth: '100vh', maxHeight: '100vh'  }}>
@@ -59,7 +59,7 @@ const App = () => {
                 })
               }
             >
-            <Info value={status} style={style} />
+              <Info value={status} style={style} />
             </CircularProgressbarWithChildren>;
           </div>
         </div>
