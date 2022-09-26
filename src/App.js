@@ -47,8 +47,8 @@ const App = () => {
 
       const style = getStyle(status);
       return (
-        <div>
-          <div style={{ maxWidth: '100vh', maxHeight: '100vh'  }}>
+        <div style={{width:'100%', position:'relative'}}>
+          <div style={{ maxWidth: '100vh', maxHeight: '100vh', margin: "0 auto", }}>
             <CircularProgressbarWithChildren 
               value={status.openedMinutesRemaining} 
               maxValue={60} 
